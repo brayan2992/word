@@ -1,3 +1,15 @@
+<?php get_header(); ?>
+
+<main>
 <?php
-echo "<h1>Hola desde mi tema WordPress</h1>";
+if ( have_posts() ) :
+    while ( have_posts() ) :
+        the_post();
+        the_title('<h1>', '</h1>');
+        the_content();
+    endwhile;
+endif;
 ?>
+</main>
+
+<?php get_footer(); ?>
