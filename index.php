@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 /**
  * Dashboard Administration Screen
@@ -210,3 +211,20 @@ if ( has_action( 'welcome_panel' ) && current_user_can( 'edit_theme_options' ) )
 wp_print_community_events_templates();
 
 require_once ABSPATH . 'wp-admin/admin-footer.php';
+=======
+<?php get_header(); ?>
+
+<main>
+<?php
+if ( have_posts() ) :
+    while ( have_posts() ) :
+        the_post();
+        the_title('<h1>', '</h1>');
+        the_content();
+    endwhile;
+endif;
+?>
+</main>
+
+<?php get_footer(); ?>
+>>>>>>> c393ae9c629cca715cb19c40f58008cd2967e2f5
